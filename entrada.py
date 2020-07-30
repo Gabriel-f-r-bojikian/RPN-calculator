@@ -27,6 +27,8 @@ class inputStream:
         listaOperadores.append(item)
       elif confirmaSeFloat(item):
         listaNumeros.append(float(item))
+      else:
+        print("Warning: " + item + " is not a valid entry")
 
     return listaNumeros, listaOperadores
         

@@ -1,22 +1,7 @@
-def soma(lvalue, rvalue):
-  return lvalue + rvalue
+operadoresAceitos = ["+", "-", "/", "%", "*", "^"]
 
-def subtrai(lvalue, rvalue):
-  return lvalue - rvalue
+def fazContaIndividual(lvalue, rvalue, operacao):
 
-def multiplica(lvalue, rvalue):
-  return lvalue*rvalue
-
-def divide(lvalue, rvalue):
-  if rvalue != 0:
-    return lvalue / rvalue
-  else:
-    return "Erro, divisão por zero"
-
-def elevaEsqueroAoDireito(lvalue, rvalue):
-  return lvalue**rvalue
-
-def fazConta(lvalue, rvalue, operacao):
   if operacao == "+":
     return soma(lvalue, rvalue)
 
@@ -31,7 +16,35 @@ def fazConta(lvalue, rvalue, operacao):
 
   elif operacao == "^":
     return elevaEsqueroAoDireito(lvalue, rvalue)
-  #Esta função não está retornando esta mensagem de erro quando ocorre operador invalido
-  #Preciso usar try and except para corrigir isto
+
   else:
     return "erro, operacao invalida"
+
+
+
+def soma(lvalue, rvalue):
+  return lvalue + rvalue
+
+
+
+def subtrai(lvalue, rvalue):
+  return lvalue - rvalue
+
+
+
+def multiplica(lvalue, rvalue):
+  return lvalue*rvalue
+
+
+
+def divide(lvalue, rvalue):
+  if rvalue != 0:
+    return lvalue / rvalue
+  else:
+    print("Erro: Divisão por zero, retornando" + str(lvalue))
+    return lvalue #Devolve o valor para a pilha
+
+
+
+def elevaEsqueroAoDireito(lvalue, rvalue):
+  return lvalue**rvalue
